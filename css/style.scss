@@ -1,0 +1,205 @@
+:root{
+    --main-color:#19283F;
+    --lblue-color:#33D1CC;
+    --red-color:#FF3150;
+    --lred-color:#eb455e;
+    --sec-color:#EFF7FA;
+    --orange:#FFC107;
+}
+.main-btn{
+    background-color:var(--red-color);
+    padding: 0.5rem 1rem;
+    &:focus{
+        background-color: var(--lred-color);
+    }
+
+}
+body{
+    font-family: "Roboto", sans-serif;
+    .navbar{
+        background-color: var(--main-color);
+        .navbar-toggler{
+            color: white;
+            font-size: 25px;
+            border: 1px solid var(--lblue-color);
+            &:focus{
+                box-shadow: none;
+            }
+            &[aria-expanded="true"]{
+                border-color:white;
+            }
+        }
+        .navbar-nav{
+            .nav-item{
+                .nav-link{
+                    color: white;
+                    font-weight: 530;
+                    
+                    &:hover,&:focus{
+                        color: var(--lblue-color);
+                    }
+                }
+                .active{
+                    color: var(--lblue-color);
+                }
+            }
+        }
+        .search{
+            color:var(--lblue-color);
+            border-left: 1px solid var(--lblue-color);
+        }
+    }
+    .landing{
+      background-color:var(--main-color) ;
+      min-height:calc(85vh - 70px);
+    }
+    .main-title{
+        &::after{
+            content: "";
+            width: 120px;
+            height: 2px;
+            background-color: var(--lblue-color);
+            position: absolute;
+            bottom: -5px;
+            transform: translateX(-50%);
+        }
+       }
+   .features{
+    .feat{
+     .icon-holder{
+        height: 200px;
+        svg{
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .number{
+           font-size: 200px; 
+           color: var(--sec-color);
+        }
+        .icon{
+            font-size: 65px;
+            color: var(--lblue-color);
+        }
+     }
+    }
+   }
+   .our-work{
+    background-color: var(--sec-color);
+    ul{
+        .active{
+            background-color: var(--red-color);
+            padding: 10px 20px;
+            border-radius: 6px;
+            color: white;
+        }
+        li a{
+            color: gray;
+            &:not(.active){
+                &:hover{
+                    color :var(--lred-color);
+                }
+            }
+        }
+    }
+    .box{
+        padding:5px ;
+        overflow: hidden;
+        position: relative;
+        &:hover{
+        &::before{
+            transform:none;
+        }
+        }
+        &::before{
+            content:attr(data-work);
+            position: absolute;
+            background-color:#ffc107c0;;
+            width: calc(100% - 10px);
+            height: calc(100% - 10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            font-weight: 900;
+            transition: 0.3s;
+            transform: translateX(calc(-100% - 5px));
+        }
+    }
+   }
+   .our-team{
+    background-color: var(--sec-color);
+    .name-1{
+        background:linear-gradient(to right,#3E7A95,#275D71);
+    }
+    .name-2{
+        background:linear-gradient(to right,#7FAF4B,#587D38);
+    }
+    .name-3{
+        background:linear-gradient(to right,#CF7B27,#9B4A22);
+    }
+   }
+   .team{
+    background-color: var(--main-color);
+   }
+   .subscribe{
+    h5{
+        color: var(--main-color);
+    }
+    input[type="email"]{
+        padding: 10px;
+        width: 95%;
+        border-radius: 15px;
+        border:2px solid var(--main-color);
+        &::placeholder{
+            opacity: 0.3;
+        }
+        &:focus{
+            outline:var(--lred-color) solid 2px;
+        }
+    }
+    .btn-sub{
+     background-color:var(--main-color) ;
+    }
+   }
+   .footer{
+    background-color: var(--main-color);
+    .icons{
+        svg{
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .facebook{
+        background-color: #1877f2;
+    }
+    .twitter{
+        background-color: #1da1f2;
+    }
+    .linkedin{
+        background-color: #0a66c2;
+    }
+    .youtube{
+        background-color: #ff0000;
+    }
+   }
+}
+@media (max-width:450px){
+    .our-work{
+        ul{
+            flex-direction: column;
+        }
+    }
+}
+@media (max-width:900px){
+    .describtion{
+        width: 75% !important;
+    }
+}
+@media (min-width:990px){
+.footer{
+    .copyright{
+        width: 50%;
+    }
+}
+}
